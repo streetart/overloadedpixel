@@ -8,15 +8,13 @@ class SideMenu extends Component {
     render() {
         return (
             <React.Fragment>
-                <Menu theme="light" mode="inline" defaultSelectedKeys={['0']} style={{ position: 'fixed'}}>
+                <Menu  mode="inline" defaultSelectedKeys={['0']} style={{ position: 'fixed', overflow: 'hidden'}}>
 
                 <Menu.Item key="1" style={{ height: '80px', width: '250px', lineHeight: '80px', margin: '0', padding: '0', borderBottom: '1px solid #f0f2f5', borderRight: 'none' }}>
-
                         <Link to={routes.SIGN_IN}>
                         <Icon type="user" />
                             <span>nav 1</span>
                         </Link>
-
                     </Menu.Item>
 
                 <Menu.Item key="2"  style={{ height: '80px', width: '250px', lineHeight: '80px', margin: '0', padding: '0 5px', borderBottom: '1px solid #f0f2f5' }}>
