@@ -17,6 +17,7 @@ import './App.css';
 import {Icon, Layout} from 'antd';
 import styled, {ThemeProvider} from 'styled-components';
 import SideMenu from "./sideNav/SideMenu";
+import PsdPage from "./Pages/psdContainer/PsdPage";
 
 const {Header, Sider, Content} = Layout;
 
@@ -90,14 +91,20 @@ class App extends React.Component {
                                 <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
                                 <Route exact path={routes.HOME} component={HomePage}/>
                                 <Route exact path={routes.ACCOUNT} component={AccountPage}/>
-                            </Content>
 
-                            <FooterView/>
+                                <Route exact path={routes.PSD_FREEBIES} component={PsdPage}/>
+
+                            </Content>
+                                <FooterView/>
+
+
+
                         </Layout>
-                        <Sider theme="light" width={'250px'} style={{marginTop: '67px', padding: '1em'}}>Sider</Sider>
+                        <Sider theme="light" width={'300px'} style={{marginTop: '67px', padding: '1em'}}>Sider</Sider>
                     </Layout>
                 </Router>
-            </ThemeProvider>);
+            </ThemeProvider>
+        );
     }
 
 }
