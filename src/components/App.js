@@ -17,6 +17,7 @@ import './App.css';
 import {Icon, Layout} from 'antd';
 import styled, {ThemeProvider} from 'styled-components';
 import SideMenu from "./sideNav/SideMenu";
+import PsdPage from "./Pages/psdContainer/PsdPage";
 
 const {Header, Sider, Content} = Layout;
 
@@ -25,8 +26,8 @@ const TopNav = styled(Header)`
   padding: 0 ;
   position: absolute;
   left: 0;
-  p
 `;
+
 const theme = {
     primary: '#736EFE',
     light: '#FFFFFFF'
@@ -66,10 +67,14 @@ class App extends React.Component {
                     <Layout>
                         <Sider trigger={null}
                                collapsible
-                               width={'280px'}
+                               width={'250px'}
                                collapsed={this.state.collapsed}
-                               style={{minHeight: '100vh ', height: 'auto', paddingTop: '60px', backgroundColor: '#FFFFFF'}}>
-                            <SideMenu style={{position: 'fixed'}}/>
+                               style={{minHeight: '100vh ',
+                                   height: 'auto',
+                                   backgroundColor: '#FFFFFF',
+                                   boxShadow: '1px 0px 0px 0px #E8E8E8'
+                               }}>
+                            <SideMenu/>
                         </Sider>
                         <Layout>
 
@@ -86,12 +91,20 @@ class App extends React.Component {
                                 <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
                                 <Route exact path={routes.HOME} component={HomePage}/>
                                 <Route exact path={routes.ACCOUNT} component={AccountPage}/>
+
+                                <Route exact path={routes.PSD_FREEBIES} component={PsdPage}/>
+
                             </Content>
-                            <FooterView/>
+                                <FooterView/>
+
+
+
                         </Layout>
+                        <Sider theme="light" width={'300px'} style={{marginTop: '67px', padding: '1em'}}>Sider</Sider>
                     </Layout>
                 </Router>
-            </ThemeProvider>);
+            </ThemeProvider>
+        );
     }
 
 }

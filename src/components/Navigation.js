@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 
 import SignOutButton from './SignOut';
 import * as routes from '../constants/routes';
-import {Menu} from "antd";
+import {Menu, Input} from "antd";
 import styled from 'styled-components';
 
+
+const Search = Input.Search;
 
 const NavBarStyle = styled(Menu)`
   display: flex;
@@ -31,7 +33,6 @@ const Navigation = ({ sessionStore }) =>
 
 const NavigationAuth = () =>
     <Menu
-        theme="light"
         mode="horizontal"
         defaultSelectedKeys={['0']}
         style={{ lineHeight: '64px' }}
@@ -52,6 +53,11 @@ const NavigationNonAuth = () =>
 
     <Menu.Item><Link to={routes.LANDING}>Landing</Link></Menu.Item>
     <Menu.Item><Link to={routes.SIGN_IN}>Sign In</Link></Menu.Item>
+        <Menu.Item><Search
+            placeholder="input search text"
+            onSearch={value => console.log(value)}
+            style={{ width: '200ps', marginTop: '15px' }}
+        /></Menu.Item>
     </NavBarStyle>
 
 export default compose(
