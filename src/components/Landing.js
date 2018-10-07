@@ -33,7 +33,10 @@ class Landing extends Component {
                 <section className="containerBlock">
                     <TextAnimation/>
                 </section>
+
                 <section style={{padding: '2em'}}>
+                    <h2>Latest Free Design Resources</h2>
+                    <p>Hand-picked resources for web designer and developers, constantly updated.</p>
                     <List
                         grid={{gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 4, xxl: 3}}
                         dataSource={data}

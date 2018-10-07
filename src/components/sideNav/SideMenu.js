@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
 
+
+
 class SideMenu extends Component {
     render() {
         return (
             <React.Fragment>
-                <Menu  mode="inline" defaultSelectedKeys={['0']} style={{ position: 'fixed', overflow: 'hidden'}}>
+                <Menu  theme='light' mode="inline" defaultSelectedKeys={['0']} style={{ position: 'relative', top: '60px' , backgroundColor: '#FFFFFF', height: 'calc(100vh - 60px)',  boxShadow: 'inset 1px 0px 0px 0px #E8E8E8'}}>
 
-                <Menu.Item key="1" style={{ height: '80px', width: '250px', lineHeight: '80px', margin: '0', padding: '0', borderBottom: '1px solid #f0f2f5', borderRight: 'none' }}>
+                <Menu.Item key="1" style={{ height: '80px', width: '250px', lineHeight: '80px', margin: '0', padding: '0', borderBottom: '1px solid #f0f2f5', borderRight: 'none',}}>
                         <Link to={routes.SIGN_IN}>
                         <Icon type="user" />
                             <span>nav 1</span>
