@@ -1,4 +1,6 @@
 body {
     background: #f0f2f5;
+    overflow-y: visible;
+    height: 100%;
 }
 

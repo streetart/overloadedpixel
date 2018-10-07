@@ -48,6 +48,7 @@
     "resolve": "1.6.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "0.19.0",
+    "styled-components": "^3.4.9",
     "sw-precache-webpack-plugin": "0.11.4",
     "typescript": "^3.1.1",
     "url-loader": "0.6.2",
@@ -77,8 +78,8 @@
     "babel-plugin-macros": "^2.4.2",
     "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "storybook-addon-jsx": "^5.4.0",
-    "styled-components": "^3.4.9"
+    "jest-styled-components": "^6.2.1",
+    "storybook-addon-jsx": "^5.4.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -115,12 +116,19 @@
     ]
   },
   "babel": {
+    "presets": [
+      "env",
+      "react-app"
+    ],
     "plugins": [
       "transform-decorators-legacy",
-      "babel-plugin-styled-components"
-    ],
-    "presets": [
-      "react-app"
+      [
+        "babel-plugin-styled-components",
+        {
+          "minify": false
+        }
+      ],
+      "styled-components"
     ]
   },
   "eslintConfig": {
