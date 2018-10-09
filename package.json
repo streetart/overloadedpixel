@@ -60,7 +60,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
+
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -79,6 +79,7 @@
     "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "jest-styled-components": "^6.2.1",
+    "pre-commit": "^1.2.2",
     "storybook-addon-jsx": "^5.4.0"
   },
   "jest": {
