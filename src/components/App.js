@@ -18,8 +18,17 @@ import {Icon, Layout} from 'antd';
 import styled, {ThemeProvider} from 'styled-components';
 import SideMenu from "./sideNav/SideMenu";
 import PsdPage from "./Pages/psdContainer/PsdPage";
+import AboutUs from "./Pages/aboutUs/AboutUs";
+import AdvertCol from "../shared/AdvertCol/AdvertCol";
+
 
 const {Header, Sider, Content} = Layout;
+
+const SideNav = styled(Sider)`
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+`
 
 const TopNav = styled(Header)`
   width: 100%;
@@ -31,7 +40,7 @@ const TopNav = styled(Header)`
 const theme = {
     primary: '#736EFE',
     light: '#FFFFFFF'
-}
+};
 
 const MenuBurger = styled(Icon)`
   position:relative;
@@ -61,49 +70,54 @@ class App extends React.Component {
 
     render() {
         return (
-
-            <ThemeProvider theme={theme}>
-                <Router>
-                    <Layout>
-                        <Sider trigger={null}
-                               collapsible
-                               width={'250px'}
-                               collapsed={this.state.collapsed}
-                               style={{minHeight: '100vh ',
-                                   height: 'auto',
-                                   backgroundColor: '#FFFFFF',
-                                   boxShadow: '1px 0px 0px 0px #E8E8E8'
-                               }}>
-                            <SideMenu/>
-                        </Sider>
+            <React.Fragment>
+                <ThemeProvider theme={theme}>
+                    <Router>
                         <Layout>
+                            <Sider trigger={null}
+                                   collapsible
+                                   width={'250px'}
+                                   collapsed={this.state.collapsed}
+                                   style={{
+                                       minHeight: '100vh ',
+                                       height: 'auto',
+                                       backgroundColor: '#FFFFFF',
+                                       boxShadow: '1px 0px 0px 0px #E8E8E8'
+                                   }}>
+                                <SideMenu/>
+                            </Sider>
+                            <Layout>
 
-                            <TopNav>
-                                <MenuBurger
-                                    type={this.state.collapsed ? 'arrow-right' : 'arrow-left'}
-                                    onClick={this.toggle}
-                                /><Navigation/>
-                            </TopNav>
-                            <Content style={{marginTop: '66px'}}>
-                                <Route exact path={routes.LANDING} component={LandingPage}/>
-                                <Route exact path={routes.SIGN_UP} component={SignUpPage}/>
-                                <Route exact path={routes.SIGN_IN} component={SignInPage}/>
-                                <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
-                                <Route exact path={routes.HOME} component={HomePage}/>
-                                <Route exact path={routes.ACCOUNT} component={AccountPage}/>
+                                <TopNav>
+                                    <MenuBurger
+                                        type={this.state.collapsed ? 'arrow-right' : 'arrow-left'}
+                                        onClick={this.toggle}
+                                    /><Navigation/>
+                                </TopNav>
+                                <Content style={{marginTop: '66px'}}>
+                                    <Route exact path={routes.LANDING} component={LandingPage}/>
+                                    <Route exact path={routes.ABOUT} component={AboutUs}/>
+                                    <Route exact path={routes.SIGN_UP} component={SignUpPage}/>
+                                    <Route exact path={routes.SIGN_IN} component={SignInPage}/>
+                                    <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
+                                    <Route exact path={routes.HOME} component={HomePage}/>
+                                    <Route exact path={routes.ACCOUNT} component={AccountPage}/>
 
-                                <Route exact path={routes.PSD_FREEBIES} component={PsdPage}/>
+                                    <Route exact path={routes.PSD_FREEBIES} component={PsdPage}/>
 
-                            </Content>
-                                <FooterView/>
-
-
-
+                                </Content>
+                            </Layout>
+                            <SideNav theme="light" width={'250px'}
+                                     style={{marginTop: '67px', padding: '1em', borderLeft: '1px solid #f0f2f5',}}>
+                                advertisement space
+                                <AdvertCol/>
+                            </SideNav>
                         </Layout>
-                        <Sider theme="light" width={'300px'} style={{marginTop: '67px', padding: '1em'}}>Sider</Sider>
-                    </Layout>
-                </Router>
-            </ThemeProvider>
+
+                    </Router>
+                </ThemeProvider>
+                <FooterView/>
+            </React.Fragment>
         );
     }
 

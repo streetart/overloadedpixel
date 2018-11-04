@@ -39,7 +39,7 @@ const NavigationAuth = () =>
     >
         <Menu.Item><Link to={routes.LANDING}>Landing</Link></Menu.Item>
         <Menu.Item><Link to={routes.HOME}>Home</Link></Menu.Item>
-        <Menu.Item><Link to={routes.ACCOUNT}>Account</Link></Menu.Item>
+        <Menu.Item><Link to={routes.ABOUT}>ABOUT US</Link></Menu.Item>
         <Menu.Item><SignOutButton /></Menu.Item>
     </Menu>
 
@@ -52,11 +52,12 @@ const NavigationNonAuth = () =>
     >
 
     <Menu.Item><Link to={routes.LANDING}>Landing</Link></Menu.Item>
+    <Menu.Item><Link to={routes.ABOUT}>About Us</Link></Menu.Item>
     <Menu.Item><Link to={routes.SIGN_IN}>Sign In</Link></Menu.Item>
         <Menu.Item><Search
             placeholder="input search text"
             onSearch={value => console.log(value)}
-            style={{ width: '200ps', marginTop: '15px' }}
+            style={{ width: '200px', marginTop: '15px' }}
         /></Menu.Item>
     </NavBarStyle>
 

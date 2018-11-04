@@ -1,25 +1,35 @@
-import React, {Component} from 'react';
-import {Avatar, Card, Icon} from "antd";
+import React from 'react';
+import {Avatar, Card, Icon } from "antd";
 
 const { Meta } = Card;
 
-class CardView extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Card
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
-                >
-                    <Meta
-                        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                        title="Card title"
-                        description="This is the description"
-                    />
-                </Card>
-            </React.Fragment>
-        );
-    }
+const IconText = ({ type, text }) => (
+  <React.Fragment>
+    <Icon type={type} style={{ marginRight: 8 }} />
+        {text}
+ </React.Fragment>
+);
+
+
+const CardView = (props) => {
+    return (
+        <React.Fragment>
+            <Card
+                cover={<img alt="example" src={props.ImagePreview} />}
+                actions={[ <IconText type="eye" text="15" />, <IconText type="heart" text="15326" />, <IconText type="message" text="12" /> ]}
+            >
+
+                <Meta
+                    avatar={  <Avatar size="large" src={props.AvatarImg}>
+                        {props.user}
+                    </Avatar>}
+                    title={props.title}
+                    description={props.TeamMember}
+                />
+            </Card>
+        </React.Fragment>
+    )
 }
+
 
 export default CardView;
