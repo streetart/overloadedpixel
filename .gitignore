@@ -6,6 +6,4 @@ yarn-error.log
 dist
 coverage
 .next
-src/**/*.jsx
-src/**/*.js
-src/**/*.map
+
