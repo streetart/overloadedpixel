@@ -1,0 +1,11 @@
+{
+  "main.css": "static/css/main.465320a7.css",
+  "main.css.map": "static/css/main.465320a7.css.map",
+<<<<<<< HEAD:build/asset-manifest.json
+  "main.js": "static/js/main.09cf6f88.js",
+  "main.js.map": "static/js/main.09cf6f88.js.map"
+=======
+  "main.js": "static/js/main.3ea1f07e.js",
+  "main.js.map": "static/js/main.3ea1f07e.js.map"
+>>>>>>> ee92bbe348493fda8084c77ae68c2ddbb7845ca1:asset-manifest.json
+}
