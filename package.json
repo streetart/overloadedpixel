@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "precommit.silent": true,
-  "homepage" : "http://streetart.github.io/overloadedpixel",
-
+  "homepage": "http://streetart.github.io/",
   "dependencies": {
     "@storybook/components": "^3.4.11",
     "@storybook/react": "^3.4.11",
@@ -34,11 +33,13 @@
     "file-loader": "1.1.5",
     "firebase": "^5.5.7",
     "fs-extra": "3.0.1",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "2.29.0",
     "husky": "^1.1.3",
     "jest": "20.0.4",
     "mobx": "^5.5.0",
     "mobx-react": "^5.2.8",
+    "now": "^11.5.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -49,6 +50,7 @@
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1",
+    "react.build": "^1.0.5",
     "recompose": "^0.30.0",
     "resolve": "1.6.0",
     "source-map-loader": "^0.2.4",
@@ -65,8 +67,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -81,6 +83,7 @@
     "@storybook/react": "^3.4.11",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.8",
+    "babel-plugin-import-inspector": "^2.0.0",
     "babel-plugin-macros": "^2.4.2",
     "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -130,8 +133,14 @@
       "react-app"
     ],
     "plugins": [
-
       "transform-decorators-legacy",
+      [
+        "import-inspector",
+        {
+          "serverSideRequirePath": true,
+          "webpackRequireWeakId": true
+        }
+      ],
       [
         "babel-plugin-styled-components",
         {
