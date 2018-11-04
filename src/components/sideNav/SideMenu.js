@@ -15,7 +15,7 @@ class SideMenu extends Component {
     render() {
         return (
             <React.Fragment>
-                <Menu  theme='light' mode="inline" defaultSelectedKeys={['0']} style={{ position: 'relative' , marginTop:'80px', borderLeft: '1px solid #f0f2f5', backgroundColor: '#FFFFFF', height: 'calc(100vh - 60px)',  boxShadow: 'inset 1px 0px 0px 0px #E8E8E8'}}>
+                <Menu  theme='light' mode="inline" defaultSelectedKeys={['0']} style={{ position: 'relative' , marginTop:'80px', borderRight: '1px solid #f0f2f5', backgroundColor: '#FFFFFF', height: 'calc(100vh - 60px)' }}>
 
 
                     <SubMenu key="sub1" title={<PsdIcon/>} style={{ borderBottom: '1px solid #f0f2f5'}} >

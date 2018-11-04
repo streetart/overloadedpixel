@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Route,} from 'react-router-dom';
+
+import {BrowserRouter as Router, Route,  Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
@@ -20,6 +21,7 @@ import SideMenu from "./sideNav/SideMenu";
 import PsdPage from "./Pages/psdContainer/PsdPage";
 import AboutUs from "./Pages/aboutUs/AboutUs";
 import AdvertCol from "../shared/AdvertCol/AdvertCol";
+import Contact from "./Pages/contactMe/Contact";
 
 
 const {Header, Sider, Content} = Layout;
@@ -95,21 +97,25 @@ class App extends React.Component {
                                     /><Navigation/>
                                 </TopNav>
                                 <Content style={{marginTop: '66px'}}>
-                                    <Route exact path={routes.LANDING} component={LandingPage}/>
-                                    <Route exact path={routes.ABOUT} component={AboutUs}/>
-                                    <Route exact path={routes.SIGN_UP} component={SignUpPage}/>
-                                    <Route exact path={routes.SIGN_IN} component={SignInPage}/>
-                                    <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
-                                    <Route exact path={routes.HOME} component={HomePage}/>
-                                    <Route exact path={routes.ACCOUNT} component={AccountPage}/>
 
-                                    <Route exact path={routes.PSD_FREEBIES} component={PsdPage}/>
+                                    <Switch>
+                                        <Route exact path={routes.LANDING} component={LandingPage}/>
+                                        <Route exact path={routes.ABOUT} component={AboutUs}/>
+                                        <Route exact path={routes.SIGN_UP} component={SignUpPage}/>
+                                        <Route exact path={routes.SIGN_IN} component={SignInPage}/>
+                                        <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
+                                        <Route exact path={routes.HOME} component={HomePage}/>
+                                        <Route exact path={routes.ACCOUNT} component={AccountPage}/>
+                                        <Route exact path={routes.CONTACT} component={Contact}/>
+
+                                        <Route exact path={routes.PSD_FREEBIES} component={PsdPage}/>
+                                    </Switch>
+
 
                                 </Content>
                             </Layout>
                             <SideNav theme="light" width={'250px'}
                                      style={{marginTop: '67px', padding: '1em', borderLeft: '1px solid #f0f2f5',}}>
-                                advertisement space
                                 <AdvertCol/>
                             </SideNav>
                         </Layout>

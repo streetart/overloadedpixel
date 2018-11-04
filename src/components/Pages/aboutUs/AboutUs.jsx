@@ -15,6 +15,7 @@ import {Link} from "react-router-dom";
 
 
 
+
 const AboutContent = [
     {
         title: "Art of Design",
