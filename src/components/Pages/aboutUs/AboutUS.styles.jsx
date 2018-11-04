@@ -64,7 +64,7 @@ export const CardBody = styled.div`
 `;
 
 export const Iconic = styled(Icon)`
-	font-size: 10px;
+	font-size: 30px;
 	color: #999caa;
 	margin-bottom: 1rem;
 	span {
