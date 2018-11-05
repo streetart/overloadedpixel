@@ -79,8 +79,10 @@ class App extends React.Component {
                             <Sider trigger={null}
                                    collapsible
                                    width={'250px'}
+
                                    collapsed={this.state.collapsed}
                                    style={{
+
                                        minHeight: '100vh ',
                                        height: 'auto',
                                        backgroundColor: '#FFFFFF',
