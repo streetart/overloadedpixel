@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://overloadedpixel.netlify.com/* https://www.overloadedpixel.com/:splat 301!
