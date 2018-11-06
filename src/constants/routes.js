@@ -3,6 +3,7 @@ export const SIGN_IN = '/signin';
 export const LANDING = '/';
 export const ABOUT = '/about';
 export const CONTACT = '/contact';
+export const BLOG = '/listenUp';
 
 export const HOME = '/home';
 export const ACCOUNT = '/account';
