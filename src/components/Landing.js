@@ -123,6 +123,7 @@ class Landing extends Component {
                         title={"Latest Free Design Resources"}
                         subTitle={"Hand-picked resources for web designer and developers, constantly updated."}
                     />
+                    <h1>test</h1>
                     <List
                         grid={{gutter: 16, xs: 1, sm: 2, md: 3, lg: 4}}
                         dataSource={data}

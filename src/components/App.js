@@ -4,11 +4,11 @@ import {BrowserRouter as Router, Route,  Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
-import SignUpPage from './SignUp';
-import SignInPage from './SignIn';
-import PasswordForgetPage from './PasswordForget';
+import SignUpPage from './Pages/AccountLogin/SignUp';
+import SignInPage from './Pages/AccountLogin/SignIn';
+import PasswordForgetPage from './Pages/AccountLogin/PasswordForget';
 import HomePage from './Home';
-import AccountPage from './Account';
+import AccountPage from './Pages/AccountLogin/Account';
 import FooterView from './footer/FooterView'
 
 import * as routes from '../constants/routes';
@@ -22,6 +22,7 @@ import PsdPage from "./Pages/psdContainer/PsdPage";
 import AboutUs from "./Pages/aboutUs/AboutUs";
 import AdvertCol from "../shared/AdvertCol/AdvertCol";
 import Contact from "./Pages/contactMe/Contact";
+import BlogContainer from "./Pages/BlogContainer/BlogContainer";
 
 
 const {Header, Sider, Content} = Layout;
@@ -103,6 +104,7 @@ class App extends React.Component {
                                     <Switch>
                                         <Route exact path={routes.LANDING} component={LandingPage}/>
                                         <Route exact path={routes.ABOUT} component={AboutUs}/>
+                                        <Route exact path={routes.BLOG} component={BlogContainer}/>
                                         <Route exact path={routes.SIGN_UP} component={SignUpPage}/>
                                         <Route exact path={routes.SIGN_IN} component={SignInPage}/>
                                         <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
