@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
 import TextAnimation from "../shared/TextAnimation";
-import {List, Pagination} from "antd";
+import {List } from "antd";
 import CardView from "./shared/CardView";
 import TitleBlock from "../shared/TitleBlock/TitleBlock";
-import styled from 'styled-components';
 
-const PaginationCenter = styled.section`
-  text-align: center;
-  position: relative;
-  margin: 0 auto 2rem;
-`;
 
 const data = [
     {
@@ -123,9 +117,15 @@ class Landing extends Component {
                         title={"Latest Free Design Resources"}
                         subTitle={"Hand-picked resources for web designer and developers, constantly updated."}
                     />
-                    <h1>test</h1>
                     <List
+                        itemLayout="vertical"
                         grid={{gutter: 16, xs: 1, sm: 2, md: 3, lg: 4}}
+                        pagination={{
+                            onChange: (page) => {
+                                console.log(page);
+                            },
+                            pageSize: 4,
+                        }}
                         dataSource={data}
                         renderItem={item => (
                             <List.Item>
@@ -142,9 +142,7 @@ class Landing extends Component {
                     />
 
                 </section>
-                <PaginationCenter>
-                    <Pagination defaultCurrent={1} total={50}/>
-                </PaginationCenter>
+
 
             </React.Fragment>
         );

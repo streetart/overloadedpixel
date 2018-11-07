@@ -28,7 +28,7 @@ import BlogContainer from "./Pages/BlogContainer/BlogContainer";
 const {Header, Sider, Content} = Layout;
 
 const SideNav = styled(Sider)`
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1000px) {
         display: none;
     }
 `
